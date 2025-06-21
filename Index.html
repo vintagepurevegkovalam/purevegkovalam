@@ -415,8 +415,6 @@
     <!-- Footer -->
     <footer class="bg-emerald-900 text-white p-6 md:p-8 text-center mt-auto">
         <p class="mb-2">&copy; <script>document.write(new Date().getFullYear())</script> Vintage Punjabi Dhaba Pure Veg. All rights reserved.</p>
-        <p>Suggested Primary Domain: <a href="http://www.purevegkovalam.com" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:underline">www.purevegkovalam.com</a></p>
-        <p>Secondary Domain (301 Redirect): <span class="text-amber-300">www.vintagekovalam.com</span></p>
     </footer>
 
     <!-- JavaScript for YouTube Playlist and Gemini API Integration -->
@@ -467,7 +465,7 @@
                         reviewTextDiv.innerHTML = result.candidates[0].content.parts[0].text;
                         outputDiv.classList.remove('hidden'); // Show output container
                     } else {
-                        reviewTextDiv.innerHTML = '<p class="text-red-500">Failed to generate review idea. Please try again.</p>';
+                        outputDiv.innerHTML = '<p class="text-red-500">Failed to generate review idea. Please try again.</p>';
                         outputDiv.classList.remove('hidden');
                         console.error('Gemini API response structure unexpected for review:', result);
                     }
