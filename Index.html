@@ -55,6 +55,60 @@
             object-fit: contain;
             border-radius: 50%; /* Ensure image also rounded */
         }
+
+        /* Modal specific styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%; /* Adjust as needed */
+            max-width: 600px; /* Max width */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #F4B400; /* Amber color */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 
     <!-- JSON-LD Structured Data for SEO -->
@@ -63,7 +117,7 @@
             "@context": "http://schema.org",
             "@type": "Restaurant",
             "name": "Vintage Punjabi Dhaba Pure Veg Restaurant",
-            "image": "https://placehold.co/1920x1080/064E3B/FFFFFF/png?text=Authentic+Punjabi+Dhaba+Vibes",
+            "image": "https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/shahi_paneer.jpg",
             "url": "http://www.purevegkovalam.com",
             "telephone": "+91 6282153822",
             "email": "info@purevegkovalam.com",
@@ -109,7 +163,7 @@
         <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <!-- Replaced H1 with the actual logo image -->
             <img
-                src="https://placehold.co/200x80/064E3B/FFFFFF/png?text=Vintage+Dhaba+Logo"
+                src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/trans%20logo.png"
                 alt="Vintage Punjabi Dhaba Logo - Pure Veg Restaurant Homestay Kovalam"
                 class="h-16 md:h-20 object-contain mx-auto md:mx-0 py-2"
             />
@@ -129,7 +183,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative bg-cover bg-center h-screen flex items-center justify-center text-white"
-        style="background-image: url('https://placehold.co/1920x1080/064E3B/FFFFFF/png?text=Authentic+Punjabi+Dhaba+Vibes');">
+        style="background-image: url('https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/Hero%202.jpg');">
+        <!-- Adding `?raw=true` to directly serve the image file from GitHub, preventing it from loading the GitHub page. -->
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative text-center p-6 max-w-2xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
@@ -147,7 +202,7 @@
 
     <!-- About Us Section -->
     <section id="about" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+        <div class="container mx-auto px-4 md:px-8 max-w_4xl text-center">
             <h3 class="text-3xl md:text-4xl font-bold text-emerald-900 mb-8">About Vintage Punjabi Dhaba in Kovalam</h3>
             <p class="text-lg leading-relaxed mb-6">
                 Vintage Punjabi Dhaba brings the soulful taste of Punjab to the beautiful shores of Kovalam. We are a premier <span class="font-semibold text-emerald-800">pure veg restaurant in Kovalam</span>, dedicated to serving authentic, home-style Punjabi food prepared with love and the freshest local ingredients.
@@ -168,24 +223,24 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Menu Item 1 - Shahi Paneer -->
                 <div class="bg-white rounded-lg shadow-md p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <img src="https://placehold.co/300x200/D97706/1F2937/png?text=Shahi+Paneer" alt="Shahi Paneer" class="rounded-md mb-4 w-full h-48 object-cover"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/shahi_paneer.jpg" alt="Shahi Paneer" class="rounded-md mb-4 w-full h-48 object-cover"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">Shahi Paneer</h4>
                     <p class="text-gray-600 mb-4">A rich and creamy paneer dish, a true Punjabi classic, loved by all seeking the best <span class="font-semibold text-gray-700">pure veg in Kovalam</span>.</p>
-                    <span class="text-amber-900 font-bold text-lg">₹350</span>
+                    <span class="text-amber-900 font-bold text-lg block mt-2">₹350</span>
                 </div>
                 <!-- Menu Item 2 - Dal Makhani -->
                 <div class="bg-white rounded-lg shadow-md p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <img src="https://placehold.co/300x200/D97706/1F2937/png?text=Dal+Makhani" alt="Dal Makhani" class="w-full h-48 object-cover rounded-md mb-4"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/dal_makhani.jpg" alt="Dal Makhani" class="w-full h-48 object-cover rounded-md mb-4"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">Dal Makhani</h4>
                     <p class="text-gray-600 mb-4">Slow-cooked black lentils in a buttery, flavorful gravy, a signature dish of any authentic <span class="font-semibold text-gray-700">Punjabi Dhaba</span>.</p>
-                    <span class="text-amber-900 font-bold text-lg">₹300</span>
+                    <span class="text-amber-900 font-bold text-lg block mt-2">₹300</span>
                 </div>
                 <!-- Menu Item 3 - Sarson Ka Saag & Makki Di Roti -->
                 <div class="bg-white rounded-lg shadow-md p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                    <img src="https://placehold.co/300x200/D97706/1F2937/png?text=Sarson+Ka+Saag" alt="Sarson Ka Saag & Makki Di Roti" class="w-full h-48 object-cover rounded-md mb-4"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/sarson_ka_saag.jpg" alt="Sarson Ka Saag & Makki Di Roti" class="w-full h-48 object-cover rounded-md mb-4"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">Sarson Ka Saag & Makki Di Roti</h4>
                     <p class="text-gray-600 mb-4">Seasonal mustard greens with corn flatbread - a winter delicacy, a must-try at our <span class="font-semibold text-gray-700">Kovalam restaurant</span>.</p>
-                    <span class="text-amber-900 font-bold text-lg">₹400</span>
+                    <span class="text-amber-900 font-bold text-lg block mt-2">₹400</span>
                 </div>
                 <!-- Add more menu items as needed -->
             </div>
@@ -197,52 +252,57 @@
 
     <!-- Accommodation Section -->
     <section id="accommodation" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+        <div class="container mx-auto px-4 md:px-8 max-w_4xl text-center">
             <h3 class="text-3xl md:text-4xl font-bold text-emerald-900 mb-8">Stay with Us in Kovalam!</h3>
             <p class="text-lg leading-relaxed mb-6">
                 Extend your delightful experience beyond dining! Vintage Punjabi Dhaba also offers comfortable <strong>Homestay Facilities</strong> in Kovalam, perfect for tourists and travelers seeking a cozy and authentic stay.
             </p>
             <div class="grid md:grid-cols-2 gap-8 mb-8">
                 <div class="bg-emerald-100 rounded-lg shadow-md p-6">
-                    <img src="https://placehold.co/400x250/047857/FFFFFF/png?text=AC+Room" alt="AC Room" class="rounded-md mb-4 w-full h-48 object-cover"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/ac_room.jpg" alt="AC Room" class="rounded-md mb-4 w-full h-48 object-cover"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">AC Rooms</h4>
                     <p class="text-gray-600">Relax in our air-conditioned rooms, designed for your comfort after a day exploring Kovalam's attractions.</p>
                 </div>
                 <div class="bg-emerald-100 rounded-lg shadow-md p-6">
-                    <img src="https://placehold.co/400x250/047857/FFFFFF/png?text=Non-AC+Room" alt="Non-AC Room" class="rounded-md mb-4 w-full h-48 object-cover"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/non_ac_room.jpg" alt="Non-AC Room" class="rounded-md mb-4 w-full h-48 object-cover"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">Non-AC Rooms</h4>
                     <p class="text-gray-600">Affordable and comfortable non-AC rooms, offering a pleasant stay near the beach.</p>
                 </div>
             </div>
             <div class="bg-emerald-100 rounded-lg shadow-md p-6 mb-8">
-                <img src="https://placehold.co/600x350/047857/FFFFFF/png?text=Tourist+Home" alt="Tourist Home" class="rounded-md mb-4 w-full h-64 object-cover"/>
+                <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/tourist_home.jpg" alt="Tourist Home" class="rounded-md mb-4 w-full h-64 object-cover"/>
                 <h4 class="text-xl font-semibold text-emerald-700 mb-2">Tourist Homes</h4>
                 <p class="text-gray-600">Spacious and private tourist homes for families or groups, providing all the amenities for a memorable Kovalam vacation.</p>
             </div>
             <p class="text-lg leading-relaxed">
                 Whether you're visiting Kovalam for a short trip or a longer vacation, our <strong>homestay</strong> options provide a convenient and welcoming base. Book your stay with us and enjoy the best of <span class="font-semibold text-emerald-800">Kovalam accommodation</span>!
             </p>
-            <button class="mt-8 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105">
-                Inquire About Stays
+            <button id="generate-review-btn" class="mt-8 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-flex items-center justify-center">
+                <span class="mr-2">✨</span> Get Review Idea
             </button>
+            <div id="review-suggestion-output" class="mt-8 p-4 bg-emerald-100 rounded-lg text-left hidden">
+                <p class="font-semibold text-emerald-800 mb-2">Suggested Review:</p>
+                <div id="review-text"></div>
+            </div>
+            <div id="loading-review" class="spinner mt-4 hidden mx-auto"></div>
         </div>
     </section>
 
     <!-- Juice & Shake Parlour Section -->
     <section id="juice-parlor" class="py-16 md:py-24 bg-emerald-50">
-        <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+        <div class="container mx-auto px-4 md:px-8 max-w_4xl text-center">
             <h3 class="text-3xl md:text-4xl font-bold text-emerald-900 mb-8">Refreshing Juice & Shake Bar</h3>
             <p class="text-lg leading-relaxed mb-6">
                 Quench your thirst with our wide selection of fresh juices and delicious shakes! Our parlour is the perfect spot to cool down after enjoying the Kovalam sun, located right at your favorite <span class="font-semibold text-emerald-800">pure veg restaurant in Kovalam</span>.
             </p>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <img src="https://placehold.co/400x250/D97706/1F2937/png?text=Fresh+Juices" alt="Fresh Juices" class="rounded-md mb-4 w-full h-48 object-cover"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/fresh_juices.jpg" alt="Fresh Juices" class="rounded-md mb-4 w-full h-48 object-cover"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">Fresh Juices</h4>
                     <p class="text-gray-600">Enjoy a variety of seasonal fruit juices, freshly prepared to invigorate you.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <img src="https://placehold.co/400x250/D97706/1F2937/png?text=Creamy+Shakes" alt="Creamy Shakes" class="rounded-md mb-4 w-full h-48 object-cover"/>
+                    <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/creamy_shakes.jpg" alt="Creamy Shakes" class="rounded-md mb-4 w-full h-48 object-cover"/>
                     <h4 class="text-xl font-semibold text-emerald-700 mb-2">Creamy Shakes</h4>
                     <p class="text-gray-600">Indulge in our thick and creamy milkshakes, available in classic and unique flavors.</p>
                 </div>
@@ -255,7 +315,7 @@
 
     <!-- Social Media & Gallery Section -->
     <section id="social-media" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+        <div class="container mx-auto px-4 md:px-8 max-w_4xl text-center">
             <h3 class="text-3xl md:text-4xl font-bold text-emerald-900 mb-8">Connect & Explore!</h3>
             <p class="text-lg leading-relaxed mb-8">
                 Stay updated with our latest dishes, offers, and behind-the-scenes moments by following us on social media! Discover why we are among the most talked-about <span class="font-semibold text-emerald-800">restaurants in Kovalam</span>.
@@ -295,6 +355,15 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2c.4 1.3.66 2.7.75 4a10.12 10.12 0 0 1 0 2 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2Z"/><path d="m10 15 5-3-5-3v6Z"/></svg>
                 <span class="font-semibold">Visit Our YouTube Channel</span>
             </a>
+
+            <button id="generate-attractions-btn" class="mt-8 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-flex items-center justify-center">
+                <span class="mr-2">✨</span> Discover Kovalam Attractions
+            </button>
+            <div id="attractions-output" class="mt-8 p-4 bg-emerald-100 rounded-lg text-left hidden">
+                <p class="font-semibold text-emerald-800 mb-2">Suggested Attractions:</p>
+                <div id="attractions-text"></div>
+            </div>
+            <div id="loading-attractions" class="spinner mt-4 hidden mx-auto"></div>
         </div>
     </section>
 
@@ -350,13 +419,126 @@
         <p>Secondary Domain (301 Redirect): <span class="text-amber-300">www.vintagekovalam.com</span></p>
     </footer>
 
-    <!-- JavaScript for YouTube Playlist (if dynamic latest video is desired) -->
+    <!-- JavaScript for YouTube Playlist and Gemini API Integration -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // The YouTube iframe src is now directly set to your provided playlist ID.
+            // Set YouTube iframe src directly to your provided playlist ID
             const youtubeIframe = document.querySelector('#social-media iframe');
             if (youtubeIframe) {
                 youtubeIframe.src = "https://www.youtube.com/embed?listType=playlist&list=PL3NrIHLbVFt5C8BmodTlD0c7gvTIige5k&autoplay=0&controls=1&showinfo=0&rel=0";
+            }
+
+            // Gemini API Key (leave empty, Canvas will provide at runtime)
+            const apiKey = ""; // Canvas will automatically provide this at runtime
+
+            // Function to generate homestay review suggestion using Gemini API
+            async function generateReviewSuggestion() {
+                const outputDiv = document.getElementById('review-suggestion-output');
+                const reviewTextDiv = document.getElementById('review-text');
+                const loadingDiv = document.getElementById('loading-review');
+
+                if (!outputDiv || !reviewTextDiv || !loadingDiv) {
+                    console.error("Review output or loading element not found.");
+                    return;
+                }
+
+                reviewTextDiv.innerHTML = ''; // Clear previous content
+                outputDiv.classList.add('hidden'); // Hide output container initially
+                loadingDiv.classList.remove('hidden'); // Show spinner
+
+                let chatHistory = [];
+                let prompt = "Write a positive and inviting review (max 100 words) for a homestay in Kovalam, Kerala, emphasizing comfort, hospitality, authentic food (pure veg Punjabi Dhaba), and beautiful location near the beach. Make it sound genuine and appealing to tourists.";
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        reviewTextDiv.innerHTML = result.candidates[0].content.parts[0].text;
+                        outputDiv.classList.remove('hidden'); // Show output container
+                    } else {
+                        reviewTextDiv.innerHTML = '<p class="text-red-500">Failed to generate review idea. Please try again.</p>';
+                        outputDiv.classList.remove('hidden');
+                        console.error('Gemini API response structure unexpected for review:', result);
+                    }
+                } catch (error) {
+                    reviewTextDiv.innerHTML = '<p class="text-red-500">Error generating review idea. Please try again later.</p>';
+                    outputDiv.classList.remove('hidden');
+                    console.error('Error calling Gemini API for review:', error);
+                } finally {
+                    loadingDiv.classList.add('hidden'); // Hide spinner
+                }
+            }
+
+            // Add event listener to the "Get Review Idea" button
+            const generateReviewButton = document.getElementById('generate-review-btn');
+            if (generateReviewButton) {
+                generateReviewButton.addEventListener('click', generateReviewSuggestion);
+            }
+
+            // Function to generate Kovalam attractions using Gemini API
+            async function generateAttractionSuggestions() {
+                const outputDiv = document.getElementById('attractions-output');
+                const attractionsTextDiv = document.getElementById('attractions-text');
+                const loadingDiv = document.getElementById('loading-attractions');
+
+                if (!outputDiv || !attractionsTextDiv || !loadingDiv) {
+                    console.error("Attractions output or loading element not found.");
+                    return;
+                }
+
+                attractionsTextDiv.innerHTML = ''; // Clear previous content
+                outputDiv.classList.add('hidden'); // Hide output container initially
+                loadingDiv.classList.remove('hidden'); // Show spinner
+
+                let chatHistory = [];
+                let prompt = "List 5-7 popular tourist attractions in Kovalam, Kerala, suitable for different interests (e.g., beaches, lighthouses, cultural sites, nature). Include a very brief description for each. Format as an unordered list.";
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        attractionsTextDiv.innerHTML = result.candidates[0].content.parts[0].text;
+                        outputDiv.classList.remove('hidden'); // Show output container
+                    } else {
+                        attractionsTextDiv.innerHTML = '<p class="text-red-500">Failed to generate attractions. Please try again.</p>';
+                        outputDiv.classList.remove('hidden');
+                        console.error('Gemini API response structure unexpected for attractions:', result);
+                    }
+                } catch (error) {
+                    attractionsTextDiv.innerHTML = '<p class="text-red-500">Error generating attractions. Please try again later.</p>';
+                    outputDiv.classList.remove('hidden');
+                    console.error('Error calling Gemini API for attractions:', error);
+                } finally {
+                    loadingDiv.classList.add('hidden'); // Hide spinner
+                }
+            }
+
+            // Add event listener to the "Discover Kovalam Attractions" button
+            const generateAttractionsButton = document.getElementById('generate-attractions-btn');
+            if (generateAttractionsButton) {
+                generateAttractionsButton.addEventListener('click', generateAttractionSuggestions);
             }
         });
     </script>
