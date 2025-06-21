@@ -161,13 +161,19 @@
     <!-- Header -->
     <header class="bg-emerald-900 text-white shadow-lg p-4 md:p-6 sticky top-0 z-50">
         <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <!-- Replaced H1 with the actual logo image -->
-            <img
-                src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/trans%20logo.png"
-                alt="Vintage Punjabi Dhaba Logo - Pure Veg Restaurant Homestay Kovalam"
-                class="h-16 md:h-20 object-contain mx-auto md:mx-0 py-2"
-            />
-            <!-- IMPORTANT: Replace the src above with your actual hosted logo URL, e.g., "https://yourwebsite.com/images/Vintage_Logo_4.png" -->
+            <div class="flex items-center space-x-4">
+                <!-- Logo -->
+                <img
+                    src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/trans%20logo.png"
+                    alt="Vintage Punjabi Dhaba Logo - Pure Veg Restaurant Homestay Kovalam"
+                    class="h-16 md:h-20 object-contain py-2"
+                />
+                <!-- Phone Call Link -->
+                <a href="tel:+916282153822" class="text-amber-300 hover:text-amber-100 transition duration-300 flex items-center space-x-2 text-lg font-semibold md:text-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1- .45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>+91 6282153822</span>
+                </a>
+            </div>
 
             <ul class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0 text-lg">
                 <li><a href="#home" class="hover:text-amber-300 transition duration-300">Home</a></li>
@@ -272,19 +278,11 @@
             <div class="bg-emerald-100 rounded-lg shadow-md p-6 mb-8">
                 <img src="https://raw.githubusercontent.com/vintagepurevegkovalam/purevegkovalam/Images/tourist_home.jpg" alt="Tourist Home" class="rounded-md mb-4 w-full h-64 object-cover"/>
                 <h4 class="text-xl font-semibold text-emerald-700 mb-2">Tourist Homes</h4>
-                <p class="text-gray-600">Spacious and private tourist homes for families or groups, providing all the amenities for a memorable Kovalam vacation.</p>
+                    <p class="text-gray-600">Spacious and private tourist homes for families or groups, providing all the amenities for a memorable Kovalam vacation.</p>
             </div>
             <p class="text-lg leading-relaxed">
                 Whether you're visiting Kovalam for a short trip or a longer vacation, our <strong>homestay</strong> options provide a convenient and welcoming base. Book your stay with us and enjoy the best of <span class="font-semibold text-emerald-800">Kovalam accommodation</span>!
             </p>
-            <button id="generate-review-btn" class="mt-8 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-flex items-center justify-center">
-                <span class="mr-2">✨</span> Get Review Idea
-            </button>
-            <div id="review-suggestion-output" class="mt-8 p-4 bg-emerald-100 rounded-lg text-left hidden">
-                <p class="font-semibold text-emerald-800 mb-2">Suggested Review:</p>
-                <div id="review-text"></div>
-            </div>
-            <div id="loading-review" class="spinner mt-4 hidden mx-auto"></div>
         </div>
     </section>
 
@@ -355,15 +353,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2c.4 1.3.66 2.7.75 4a10.12 10.12 0 0 1 0 2 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2Z"/><path d="m10 15 5-3-5-3v6Z"/></svg>
                 <span class="font-semibold">Visit Our YouTube Channel</span>
             </a>
-
-            <button id="generate-attractions-btn" class="mt-8 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-flex items-center justify-center">
-                <span class="mr-2">✨</span> Discover Kovalam Attractions
-            </button>
-            <div id="attractions-output" class="mt-8 p-4 bg-emerald-100 rounded-lg text-left hidden">
-                <p class="font-semibold text-emerald-800 mb-2">Suggested Attractions:</p>
-                <div id="attractions-text"></div>
-            </div>
-            <div id="loading-attractions" class="spinner mt-4 hidden mx-auto"></div>
         </div>
     </section>
 
@@ -417,7 +406,7 @@
         <p class="mb-2">&copy; <script>document.write(new Date().getFullYear())</script> Vintage Punjabi Dhaba Pure Veg. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for YouTube Playlist and Gemini API Integration -->
+    <!-- JavaScript for YouTube Playlist (other AI features removed) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Set YouTube iframe src directly to your provided playlist ID
@@ -425,119 +414,9 @@
             if (youtubeIframe) {
                 youtubeIframe.src = "https://www.youtube.com/embed?listType=playlist&list=PL3NrIHLbVFt5C8BmodTlD0c7gvTIige5k&autoplay=0&controls=1&showinfo=0&rel=0";
             }
-
-            // Gemini API Key (leave empty, Canvas will provide at runtime)
-            const apiKey = ""; // Canvas will automatically provide this at runtime
-
-            // Function to generate homestay review suggestion using Gemini API
-            async function generateReviewSuggestion() {
-                const outputDiv = document.getElementById('review-suggestion-output');
-                const reviewTextDiv = document.getElementById('review-text');
-                const loadingDiv = document.getElementById('loading-review');
-
-                if (!outputDiv || !reviewTextDiv || !loadingDiv) {
-                    console.error("Review output or loading element not found.");
-                    return;
-                }
-
-                reviewTextDiv.innerHTML = ''; // Clear previous content
-                outputDiv.classList.add('hidden'); // Hide output container initially
-                loadingDiv.classList.remove('hidden'); // Show spinner
-
-                let chatHistory = [];
-                let prompt = "Write a positive and inviting review (max 100 words) for a homestay in Kovalam, Kerala, emphasizing comfort, hospitality, authentic food (pure veg Punjabi Dhaba), and beautiful location near the beach. Make it sound genuine and appealing to tourists.";
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-                const payload = { contents: chatHistory };
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        reviewTextDiv.innerHTML = result.candidates[0].content.parts[0].text;
-                        outputDiv.classList.remove('hidden'); // Show output container
-                    } else {
-                        outputDiv.innerHTML = '<p class="text-red-500">Failed to generate review idea. Please try again.</p>';
-                        outputDiv.classList.remove('hidden');
-                        console.error('Gemini API response structure unexpected for review:', result);
-                    }
-                } catch (error) {
-                    reviewTextDiv.innerHTML = '<p class="text-red-500">Error generating review idea. Please try again later.</p>';
-                    outputDiv.classList.remove('hidden');
-                    console.error('Error calling Gemini API for review:', error);
-                } finally {
-                    loadingDiv.classList.add('hidden'); // Hide spinner
-                }
-            }
-
-            // Add event listener to the "Get Review Idea" button
-            const generateReviewButton = document.getElementById('generate-review-btn');
-            if (generateReviewButton) {
-                generateReviewButton.addEventListener('click', generateReviewSuggestion);
-            }
-
-            // Function to generate Kovalam attractions using Gemini API
-            async function generateAttractionSuggestions() {
-                const outputDiv = document.getElementById('attractions-output');
-                const attractionsTextDiv = document.getElementById('attractions-text');
-                const loadingDiv = document.getElementById('loading-attractions');
-
-                if (!outputDiv || !attractionsTextDiv || !loadingDiv) {
-                    console.error("Attractions output or loading element not found.");
-                    return;
-                }
-
-                attractionsTextDiv.innerHTML = ''; // Clear previous content
-                outputDiv.classList.add('hidden'); // Hide output container initially
-                loadingDiv.classList.remove('hidden'); // Show spinner
-
-                let chatHistory = [];
-                let prompt = "List 5-7 popular tourist attractions in Kovalam, Kerala, suitable for different interests (e.g., beaches, lighthouses, cultural sites, nature). Include a very brief description for each. Format as an unordered list.";
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-                const payload = { contents: chatHistory };
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        attractionsTextDiv.innerHTML = result.candidates[0].content.parts[0].text;
-                        outputDiv.classList.remove('hidden'); // Show output container
-                    } else {
-                        attractionsTextDiv.innerHTML = '<p class="text-red-500">Failed to generate attractions. Please try again.</p>';
-                        outputDiv.classList.remove('hidden');
-                        console.error('Gemini API response structure unexpected for attractions:', result);
-                    }
-                } catch (error) {
-                    attractionsTextDiv.innerHTML = '<p class="text-red-500">Error generating attractions. Please try again later.</p>';
-                    outputDiv.classList.remove('hidden');
-                    console.error('Error calling Gemini API for attractions:', error);
-                } finally {
-                    loadingDiv.classList.add('hidden'); // Hide spinner
-                }
-            }
-
-            // Add event listener to the "Discover Kovalam Attractions" button
-            const generateAttractionsButton = document.getElementById('generate-attractions-btn');
-            if (generateAttractionsButton) {
-                generateAttractionsButton.addEventListener('click', generateAttractionSuggestions);
-            }
+            // Removed: Gemini API Key as no AI features are left that use it directly
+            // Removed: generateReviewSuggestion() function and its event listener
+            // Removed: generateAttractionSuggestions() function and its event listener
         });
     </script>
 </body>
